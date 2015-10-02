@@ -1,0 +1,14 @@
+<h1>Listing pastors</h1>
+<%= link_to 'New Pastor', new_pastor_path %>
+
+
+<body>
+  <% @pastors.all_pastors.each do |pastor| %>
+    <p>
+      <%= pastor.fullname %>
+      <%= link_to 'Show', pastor %>
+      <%= link_to 'Edit', edit_pastor_path(pastor) %>
+      <%= link_to 'Destroy', pastor, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </p>
+  <% end %>
+</body>

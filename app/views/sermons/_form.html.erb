@@ -1,0 +1,47 @@
+<%= form_for(@sermon) do |f| %>
+  <% if @sermon.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sermon.errors.count, "error") %> prohibited this sermon from being saved:</h2>
+
+      <ul>
+      <% @sermon.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :audio_file %><br>
+    <%= f.text_field :audio_file %>
+  </div>
+  <div class="field">
+    <%= f.label :book %><br>
+    <%= f.text_field :book %>
+  </div>
+  <div class="field">
+    <%= f.label :chapter %><br>
+    <%= f.text_field :chapter %>
+  </div>
+  <div class="field">
+    <%= f.label :first_verse %><br>
+    <%= f.text_field :first_verse %>
+  </div>
+  <div class="field">
+    <%= f.label :last_chapter %><br>
+    <%= f.text_field :last_chapter %>
+    <p>If the Sermon only covers verses in a single chapter please leave blank.</p>
+  </div>
+  <div class="field">
+    <%= f.label :last_verse %><br>
+    <%= f.text_field :last_verse %>
+  </div>
+  <div class="field">
+    <%= f.label :pastor_id %><br>
+    <%= f.collection_select :pastor_id, Pastor.all, :id, :fullname, {:include_blank => "Choose a Pastor"} %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

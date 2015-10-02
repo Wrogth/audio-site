@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h3><%= @sermon.pastor.fullname %></h3>
+  <h4><%= @sermon.verseref %></h4>
+    <audio controls src="<%= @sermon.audio_file %>">
+        <a href="<%= @sermon.audio_file %>">sermon.book</a>
+    </audio>
+</p>
+
+<%= link_to 'Edit', edit_sermon_path(@sermon) %> |
+<%= link_to 'Back', sermons_path %>

@@ -1,0 +1,20 @@
+<div class="row">
+      <div class="dash_heading">
+        <h1>Sermons</h1>
+      </div>
+      <div>
+        <%= link_to 'New Sermon', new_sermon_path %>
+      </div>
+</div>
+
+    <div class="col-md-offset-8">
+      <% @sermons.each do |sermon| %>
+          <h4 class="dash_heading">
+            <%= sermon.pastor.fullname %>
+            <%= sermon.verseref %>
+          </h4>
+          <%= link_to 'Show', sermon %>
+          <%= link_to 'Edit', edit_sermon_path(sermon) %>
+          <%= link_to 'Destroy', sermon, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </div>

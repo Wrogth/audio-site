@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<h3>
+    Pastor <%= @pastor.fullname %>
+</h3>
+
+<p>
+  <% @pastor.sermons.each do |sermon| %>
+      <p>
+        <%= sermon.verseref %>
+        <%= link_to 'Show', sermon %>
+      </p>
+  <% end %>
+</p>
+<%= link_to 'Edit', edit_pastor_path(@pastor) %> |
+<%= link_to 'Back', pastors_path %>
