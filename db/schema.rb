@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150513200748) do
-
-  create_table "books", force: true do |t|
-    t.string "name"
-  end
+ActiveRecord::Schema.define(version: 20150422170640) do
 
   create_table "pastors", force: true do |t|
     t.string   "first_name"
